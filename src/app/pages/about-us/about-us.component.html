@@ -1,0 +1,237 @@
+<!-- Hero Section -->
+<section class="about-hero">
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text" data-aos="fade-up">
+        <h1>About Bullvator Surgitech</h1>
+        <p class="hero-subtitle">Shaping the Future of Surgery</p>
+        <div class="hero-divider"></div>
+        <p class="hero-description">Committed to delivering precision-engineered surgical instruments that enhance healthcare outcomes and empower medical professionals worldwide.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/home/surgitech-products-1.jpeg" alt="Bullvator Surgitech manufacturing facility" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- Company Overview Section -->
+<section class="company-overview">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h2 class="section-title">Our Story</h2>
+        <p class="lead">Founded with a vision to revolutionize surgical care through innovative technology and uncompromising quality.</p>
+        <p>Bullvator Surgitech Pvt. Ltd., founded in 2025 and headquartered in Rajkot, is a forward-looking company specializing in high-quality Surgitech products. With a mission to be innovative and technology-driven, the company is committed to delivering advanced surgical solutions that enhance healthcare outcomes and support medical professionals with reliable, modern technologies.</p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Products Designed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Healthcare Partners</p>
+          </div>
+          <div class="stat-item">
+            <h3>99.8%</h3>
+            <p>Quality Assurance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="overview-image">
+          <img src="assets/home/surgitech-products-2.jpeg" alt="Bullvator Surgitech quality control process" class="img-fluid rounded shadow" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="mission-card">
+          <div class="card-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Our Mission</h3>
+          <p>To deliver innovative, safe, and precision-driven surgical solutions that empower healthcare professionals to achieve better treatment outcomes, ensure patient safety, and build lasting trust in every product we provide.</p>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="vision-card">
+          <div class="card-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Our Vision</h3>
+          <p>To be the most trusted partner in orthopedic and surgical innovation, recognized for advancing healthcare with reliable technology, uncompromising quality, and meaningful impact on patients' lives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values Section -->
+<section class="core-values">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Core Values</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">The principles that guide everything we do</p>
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let value of coreValues; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas {{ value.icon }}"></i>
+          </div>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quality Assurance Section -->
+<section class="quality-assurance bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h2 class="section-title">Quality Assurance</h2>
+        <p class="lead">Excellence in every instrument, precision in every process.</p>
+        <p>Our commitment to quality is unwavering. Every surgical instrument that leaves our facility undergoes rigorous testing and quality control processes to ensure it meets the highest international standards.</p>
+        
+        <div class="quality-features">
+          <div class="quality-feature" *ngFor="let feature of qualityFeatures">
+            <div class="feature-icon">
+              <i class="fas {{ feature.icon }}"></i>
+            </div>
+            <div class="feature-content">
+              <h4>{{ feature.title }}</h4>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="quality-image">
+          <img src="assets/home/surgitech-products-3.jpeg" alt="Bullvator Surgitech quality testing laboratory" class="img-fluid rounded shadow" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology & Innovation Section -->
+<section class="technology-innovation">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Technology & Innovation</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Advancing surgical care through cutting-edge technology</p>
+    
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="innovation-content">
+          <h3>State-of-the-Art Manufacturing</h3>
+          <p>Our manufacturing facility is equipped with the latest precision machinery and automated systems, ensuring consistent quality and efficiency in every product we create.</p>
+          
+          <ul class="innovation-list">
+            <li><i class="fas fa-check"></i> CNC precision machining centers</li>
+            <li><i class="fas fa-check"></i> Automated quality inspection systems</li>
+            <li><i class="fas fa-check"></i> Advanced surface treatment technologies</li>
+            <li><i class="fas fa-check"></i> Computer-controlled testing equipment</li>
+            <li><i class="fas fa-check"></i> Clean room manufacturing environments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="innovation-stats">
+          <div class="stat-card">
+            <div class="stat-number">ISO 13485</div>
+            <div class="stat-label">Certified Quality Management</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">CE</div>
+            <div class="stat-label">European Conformity</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">FDA</div>
+            <div class="stat-label">Approved Manufacturing</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Traceability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Team</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Meet the experts behind our success</p>
+    
+    <div class="row team-row">
+      <div class="col-md-6 col-sm-12" *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100" itemprop="itemListElement" itemscope itemtype="https://schema.org/Person">
+        <div class="team-card">
+          <div class="card-branding">
+            <div class="brand-logo">
+              <img src="assets/logo/logo.png" alt="Bullvator Logo" loading="lazy" decoding="async">
+            </div>
+            <div class="brand-name">
+              <h4>MEDONIX</h4>
+              <p class="brand-subtitle">SURGITECH PVT. LTD.</p>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 itemprop="name">{{ member.name }}</h3>
+            <p class="position" itemprop="jobTitle"><strong>{{ member.position }}</strong></p>
+          </div>
+          <div class="card-footer">
+            <a [href]="'mailto:' + member.email" 
+               [attr.aria-label]="'Email contact for ' + member.name"
+               class="email-button"
+               itemprop="email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Certifications & Compliance</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Meeting the highest international standards</p>
+    
+    <div class="certifications-grid">
+      <div class="cert-item" *ngFor="let cert of certifications; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
+        <div class="cert-icon">
+          <i class="fas {{ cert.icon }}"></i>
+        </div>
+        <h4>{{ cert.name }}</h4>
+        <p>{{ cert.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content text-center">
+      <h2 data-aos="fade-up">Ready to Experience Excellence?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Discover how our precision-engineered surgical instruments can enhance your practice.</p>
+      <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+        <a routerLink="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a routerLink="/" class="btn btn-outline btn-lg">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>

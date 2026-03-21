@@ -1,0 +1,72 @@
+<!-- Premium Header Component -->
+<header class="premium-header" [class.sticky]="isSticky">
+  <div class="main-header">
+    <div class="container">
+      <div class="brand-logo">
+        <a routerLink="/">
+          <img src="assets/logo/logo.png" alt="Bullvator Agro — manufacturer of rotavators and agricultural equipment" width="auto" height="70">
+        </a>
+      </div>
+
+      <div class="nav-and-actions">
+        <nav class="main-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="nav-link">
+                <span>HOME</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="action-buttons">
+          <button type="button"
+                  class="menu-toggle"
+                  (click)="toggleMobileMenu()"
+                  [class.active]="isMobileMenuOpen"
+                  aria-label="Toggle navigation menu"
+                  [attr.aria-expanded]="isMobileMenuOpen">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-nav" [class.active]="isMobileMenuOpen">
+    <nav class="mobile-menu" aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        <li>
+          <a routerLink="/"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="closeMobileMenu()">
+            <span>HOME</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-contact-info">
+        <a href="tel:+918320436023" class="mobile-contact-link">
+          <i class="fas fa-phone-volume"></i>
+          <span>+91 83204 36023</span>
+        </a>
+        <a href="mailto:bullvator@gmail.com" class="mobile-contact-link">
+          <i class="fas fa-envelope-open"></i>
+          <span>bullvator&#64;gmail.com</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="backdrop"
+       [class.active]="isMobileMenuOpen"
+       role="presentation"
+       (click)="closeMobileMenu()"
+       (touchend)="onBackdropTouchEnd($event)"></div>
+</header>

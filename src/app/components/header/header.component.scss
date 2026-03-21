@@ -1,0 +1,607 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/effects';
+@import '../../../styles.scss';
+
+// Extended Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: 767px) { @content; }
+}
+
+@mixin tablet { 
+  @media (min-width: 768px) and (max-width: 1023px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin large-desktop {
+  @media (min-width: 1200px) { @content; }
+}
+
+// Enhanced Mixins
+@mixin flex($justify: flex-start, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin smooth-transition($property: all, $duration: 0.3s) {
+  transition: $property $duration cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin premium-hover {
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba($primary, 0.2);
+  }
+}
+
+@mixin glass-effect {
+  background: rgba($background-primary, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// Light Theme Variables
+$light-bg-primary: #ffffff;
+$light-bg-secondary: #f8f9fa;
+$light-text-primary: #333333;
+$light-text-secondary: #666666;
+$light-border: #e0e0e0;
+$light-hover: #f5f5f5;
+$light-shadow: rgba(0, 0, 0, 0.1);
+
+// Main Header Styles
+.premium-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-family: $font-primary;
+  width: 100%;
+  
+  // Global container
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    
+    @include mobile {
+      padding: 0 1rem;
+    }
+  }
+  
+  // Main Navigation Header
+  .main-header {
+    background: $light-bg-primary;
+    box-shadow: 0 2px 10px $light-shadow;
+    padding: 0.75rem 0;
+    @include smooth-transition;
+    
+    .container {
+      @include flex(space-between);
+    }
+    
+    // Logo styling
+    .logo-wrapper {
+      @include flex;
+      
+      .logo-link {
+        @include flex;
+        text-decoration: none;
+        color: $light-text-primary;
+        
+        .logo-image {
+          max-height: 55px;
+          width: auto;
+          object-fit: contain;
+          @include smooth-transition;
+        }
+        
+        .brand-text {
+          margin-left: 1rem;
+          @include flex(center, flex-start, column);
+          
+          .company-name {
+            font-size: 1.1rem;
+            font-weight: $weight-bold;
+            color: $primary;
+          }
+          
+          .tagline {
+            font-size: 0.8rem;
+            color: $light-text-secondary;
+          }
+        }
+      }
+    }
+    
+    // Navigation and action buttons container
+    .nav-and-actions {
+      @include flex;
+      gap: 2rem;
+      
+      @include mobile {
+        gap: 1rem;
+      }
+    }
+    
+    // Main navigation
+    .main-nav {
+      @include mobile {
+        display: none;
+      }
+      
+      .nav-list {
+        @include flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+        
+        @include tablet {
+          gap: 0.5rem;
+        }
+      }
+      
+      .nav-item {
+        position: relative;
+        
+        // Main navigation links
+        .nav-link {
+          font-size: 0.9rem;
+          font-weight: $weight-medium;
+          color: $light-text-primary;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          letter-spacing: 0.02em;
+          @include smooth-transition;
+          text-transform: uppercase;
+          
+          &:hover {
+            color: $primary;
+          }
+          
+          // Active state
+          &.active {
+            color: $primary;
+            font-weight: $weight-bold;
+            
+            &::after {
+              content: '';
+              position: absolute;
+              left: 1rem;
+              right: 1rem;
+              bottom: -0.25rem;
+              height: 2px;
+              background-color: $primary;
+              border-radius: 1px;
+            }
+          }
+          
+          @include tablet {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+          }
+        }
+        
+        // Dropdown toggle
+        .dropdown-toggle {
+          @include flex;
+          gap: 0.35rem;
+          
+          .dropdown-icon {
+            font-size: 0.7rem;
+            margin-top: 2px;
+            @include smooth-transition;
+          }
+        }
+        
+        // Submenu styling
+        &.has-submenu {
+          position: relative;
+          
+          &:hover {
+            .submenu {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+            
+            .dropdown-icon {
+              transform: rotate(180deg);
+            }
+          }
+          
+          &.active-dropdown {
+            .dropdown-icon {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        
+        .submenu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 220px;
+          background: $light-bg-primary;
+          border-radius: 4px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          padding: 0.75rem 0;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          @include smooth-transition;
+          z-index: 100;
+          
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+          
+          .submenu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            
+            li {
+              a {
+                display: block;
+                padding: 0.6rem 1.25rem;
+                font-size: 0.85rem;
+                color: $light-text-primary;
+                text-decoration: none;
+                @include smooth-transition;
+                
+                &:hover, &.active {
+                  background-color: $light-hover;
+                  color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    // Action buttons
+    .action-buttons {
+      @include flex;
+      gap: 1rem;
+      
+      // Mobile menu toggle
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 10;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        
+        @include mobile {
+          display: flex;
+        }
+        
+        .line {
+          width: 100%;
+          height: 2px;
+          background-color: $light-text-primary;
+          border-radius: 2px;
+          @include smooth-transition;
+        }
+        
+        &.active {
+          .line {
+            &:nth-child(1) {
+              transform: translateY(8px) rotate(45deg);
+              background-color: $primary;
+            }
+            
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            
+            &:nth-child(3) {
+              transform: translateY(-8px) rotate(-45deg);
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Sticky header styles
+  &.sticky {
+    .main-header {
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 12px $light-shadow;
+      background: rgba($light-bg-primary, 0.95);
+      backdrop-filter: blur(10px);
+      
+      .logo-image {
+        max-height: 45px;
+      }
+    }
+    
+    .top-bar {
+      transform: translateY(-100%);
+    }
+  }
+  
+  // Mobile navigation
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background-color: $light-bg-primary;
+    box-shadow: -5px 0 15px $light-shadow;
+    overflow-y: auto;
+    z-index: 1001;
+    @include smooth-transition;
+    
+    &.active {
+      right: 0;
+    }
+    
+    .mobile-menu {
+      padding: 5rem 1.5rem 2rem;
+      
+      .mobile-nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+          margin-bottom: 0.5rem;
+          
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: $weight-medium;
+            color: $light-text-primary;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid $light-border;
+            @include smooth-transition;
+            
+            &:hover, &.active {
+              color: $primary;
+              border-bottom-color: $primary;
+            }
+            
+            i {
+              font-size: 0.8rem;
+              @include smooth-transition;
+              
+              &.rotate {
+                transform: rotate(180deg);
+              }
+            }
+          }
+          
+          // Mobile submenu
+          &.has-submenu {
+            .mobile-submenu {
+              list-style: none;
+              margin: 0;
+              padding: 0 0 0 1rem;
+              max-height: 0;
+              overflow: hidden;
+              @include smooth-transition(max-height, 0.4s);
+              
+              &.active {
+                max-height: 300px;
+                margin-bottom: 0.5rem;
+              }
+              
+              li {
+                margin-bottom: 0;
+                
+                a {
+                  font-size: 0.95rem;
+                  padding: 0.6rem 0;
+                  border-bottom: 1px dashed $light-border;
+                  
+                  &:hover, &.active {
+                    color: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      .mobile-contact-info {
+        margin-top: 2.5rem;
+        
+        .mobile-contact-link {
+          @include flex;
+          gap: 0.75rem;
+          color: $light-text-primary;
+          text-decoration: none;
+          margin-bottom: 1rem;
+          padding: 0.5rem;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          
+          &:hover {
+            background: $light-hover;
+            color: $primary;
+          }
+          
+          i {
+            color: $primary;
+            font-size: 1rem;
+          }
+        }
+      }
+      
+      .mobile-social-links {
+        @include flex(flex-start);
+        gap: 1rem;
+        margin-top: 1.5rem;
+        
+        .social-link {
+          @include flex(center, center);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: $light-hover;
+          color: $light-text-primary;
+          @include smooth-transition;
+          
+          &:hover {
+            background: $primary;
+            color: $light-bg-primary;
+          }
+        }
+      }
+    }
+  }
+  
+  // Backdrop overlay
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($light-bg-primary, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    @include smooth-transition;
+    
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// Responsive adjustments
+@include mobile {
+  .premium-header {
+    .main-header {
+      padding: 0.5rem 0;
+      
+      .logo-wrapper .logo-link .logo-image {
+        max-height: 40px;
+      }
+    }
+  }
+}
+
+// Medium devices
+@include tablet {
+  .premium-header {
+    .main-header {
+      .logo-wrapper .logo-link .brand-text {
+        .company-name {
+          font-size: 1rem;
+        }
+        
+        .tagline {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+// Animation for the mobile menu
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Add or update the logo styles in the header component SCSS
+.brand-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 0;
+  
+  img {
+    max-height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    
+    @media (min-width: 992px) {
+      max-height: 70px; // Larger on desktop
+    }
+    
+    @media (max-width: 576px) {
+      max-height: 50px; // Slightly smaller on mobile
+    }
+  }
+}
+
+// When header is scrolled and becomes sticky
+.navbar.sticky {
+  .brand-logo {
+    img {
+      max-height: 50px; // Slightly smaller when scrolled
+      
+      @media (max-width: 576px) {
+        max-height: 40px;
+      }
+    }
+  }
+}
+
+// Make sure the navbar container has proper padding
+.navbar {
+  padding: 0.5rem 1rem;
+  
+  @media (min-width: 992px) {
+    padding: 0.5rem 2rem;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

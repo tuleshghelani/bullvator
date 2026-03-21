@@ -1,0 +1,80 @@
+// Bullvator Agro — brand palette
+// Primary: #FA7B20 | Secondary: #3D5E3B
+$primary: #FA7B20;
+$primary-light: mix(white, $primary, 22%);
+$primary-lighter: mix(white, $primary, 48%);
+$primary-lightest: mix(white, $primary, 88%);
+$primary-dark: mix(black, $primary, 22%);
+
+$secondary: #3D5E3B;
+$secondary-light: mix(white, $secondary, 25%);
+$secondary-lighter: mix(white, $secondary, 52%);
+$secondary-lightest: mix(white, $secondary, 90%);
+$secondary-dark: mix(black, $secondary, 18%);
+
+// Neutrals (readable body copy; orange reserved for accents)
+$dark: #121416;
+$gray-900: #1b1f22;
+$gray-800: #2a2f34;
+$gray-700: #3b4248;
+$gray-600: #5a646d;
+$gray-500: #8a949c;
+$gray-400: #b3bcc2;
+$gray-300: #d7dee2;
+$gray-200: #eef1f0;
+$gray-100: #f6f8f7;
+$light: #ffffff;
+
+// Functional
+$success: #2d7a4a;
+$info: mix(white, $secondary, 15%);
+$warning: #c98200;
+$error: #c23b3b;
+
+// UI semantic tokens
+$accent: $secondary-dark;
+$text-primary: $gray-900;
+$text-secondary: $gray-700;
+$text-light: $light;
+$border-color: $gray-300;
+$background-primary: $light;
+$background-secondary: $gray-100;
+$background-tertiary: mix(white, $secondary-lightest, 40%);
+$shadow-color: rgba($dark, 0.12);
+$weight-bold: 700;
+$weight-semibold: 600;
+$weight-medium: 500;
+
+$neutral-colors: (
+  'dark': #3b4248,
+  'medium': #8a949c,
+  'light': #b3bcc2,
+  'lighter': #d7dee2,
+  'lightest': #f4f7f9
+);
+
+$neutral-dark: map-get($neutral-colors, 'dark');
+$neutral-medium: map-get($neutral-colors, 'medium');
+$neutral-light: map-get($neutral-colors, 'light');
+$neutral-lighter: map-get($neutral-colors, 'lighter');
+$neutral-lightest: map-get($neutral-colors, 'lightest');
+
+$primary-color: $primary;
+$secondary-color: $secondary;
+$text-color: $gray-900;
+$background-light: $gray-100;
+$white: #fff;
+
+$breakpoints: (
+  'phone': 576px,
+  'tablet': 768px,
+  'desktop': 992px,
+  'large-desktop': 1200px
+);
+
+$font-family-base: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+$spacing-unit: 8px;
+$container-padding: $spacing-unit * 2;

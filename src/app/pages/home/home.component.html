@@ -1,0 +1,213 @@
+<main class="home-page">
+  <!-- Hero: single H1 for SEO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content" data-aos="fade-up">
+        <p class="hero__eyebrow">Manufacturer · Rotary tillers &amp; tractor implements</p>
+        <h1 id="hero-heading">Bullvator Agro Pvt. Ltd. — Rotavators &amp; agricultural equipment</h1>
+        <p class="hero__lead">
+          <strong>Young Farmer Make Young India.</strong> We design and build robust rotary tillers (rotavators) and
+          tractor-mounted implements for modern farming — engineered for performance, durability, and
+          <span class="text-nowrap">genuine parts.</span>
+        </p>
+        <div class="hero__actions">
+          <a href="tel:+918320436023" class="btn btn-hero-primary">Call +91 83204 36023</a>
+          <a href="mailto:bullvator@gmail.com" class="btn btn-hero-outline">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rotavator lineup — four product images -->
+  <section class="showcase" id="products" aria-labelledby="showcase-heading">
+    <div class="container">
+      <header class="section-head" data-aos="fade-up">
+        <h2 id="showcase-heading">Our rotavator range</h2>
+        <p class="section-head__lead">
+          Explore our multispeed and single-speed rotary tillers — built for <strong>less maintenance</strong>,
+          <strong>best performance</strong>, <strong>low fuel consumption</strong>, and
+          <strong>genuine parts</strong>.
+        </p>
+        <p class="section-head__hint">
+          <span class="section-head__hint-badge"><i class="fas fa-hand-pointer" aria-hidden="true"></i></span>
+          <strong>Tap or click any photo</strong> to view it full screen — swipe or use arrows to browse.
+        </p>
+      </header>
+
+      <div class="showcase__grid" role="list">
+        <article
+          *ngFor="let item of showcaseImages; let i = index; trackBy: trackByShowcaseIndex"
+          class="showcase-card"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="i * 80"
+          role="listitem">
+          <button
+            type="button"
+            class="showcase-card__trigger"
+            (click)="openLightbox(i)"
+            [attr.aria-label]="'View full screen: ' + item.title">
+            <span class="showcase-card__media">
+              <img
+                [src]="item.src"
+                width="1200"
+                height="900"
+                [alt]="item.alt"
+                class="showcase-card__img"
+                [attr.fetchpriority]="i === 0 ? 'high' : null"
+                [attr.loading]="i === 0 ? null : 'lazy'"
+                decoding="async"
+                draggable="false"
+                />
+              <span class="showcase-card__hint" aria-hidden="true">
+                <span class="showcase-card__hint-icon"><i class="fas fa-expand-alt"></i></span>
+                <span class="showcase-card__hint-text">View full size</span>
+              </span>
+            </span>
+          </button>
+          <h3 class="showcase-card__title">{{ item.title }}</h3>
+          <p class="showcase-card__text">{{ item.caption }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="why-bullvator" aria-labelledby="features-heading">
+    <div class="container">
+      <h2 id="features-heading" class="section-title text-center" data-aos="fade-up">Why Bullvator</h2>
+      <ul class="features__grid" role="list">
+        <li class="features__item" data-aos="fade-up" data-aos-delay="0" role="listitem">
+          <span class="features__icon" aria-hidden="true">✓</span>
+          <div>
+            <h3 class="features__title">Less maintenance</h3>
+            <p>Thoughtful engineering and quality components reduce downtime in the field.</p>
+          </div>
+        </li>
+        <li class="features__item" data-aos="fade-up" data-aos-delay="60" role="listitem">
+          <span class="features__icon" aria-hidden="true">✓</span>
+          <div>
+            <h3 class="features__title">Best performance</h3>
+            <p>Optimized rotor speeds and blade options for effective tillage and soil mixing.</p>
+          </div>
+        </li>
+        <li class="features__item" data-aos="fade-up" data-aos-delay="120" role="listitem">
+          <span class="features__icon" aria-hidden="true">✓</span>
+          <div>
+            <h3 class="features__title">Low fuel consumption</h3>
+            <p>Efficient power transfer helps you get more work done per litre.</p>
+          </div>
+        </li>
+        <li class="features__item" data-aos="fade-up" data-aos-delay="180" role="listitem">
+          <span class="features__icon" aria-hidden="true">✓</span>
+          <div>
+            <h3 class="features__title">Genuine parts</h3>
+            <p>Authentic Bullvator parts and in-house CNC / VMC production for consistent quality.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Manufacturing -->
+  <section class="manufacturing" aria-labelledby="mfg-heading">
+    <div class="container manufacturing__inner">
+      <div class="manufacturing__copy" data-aos="fade-right">
+        <h2 id="mfg-heading">Manufacturing excellence</h2>
+        <p class="lead">
+          We are <strong>manufacturers of rotary tillers</strong> with <strong>in-house CNC &amp; VMC</strong>
+          production for critical components. Every machine is assembled with genuine parts and finished with
+          durable powder coating.
+        </p>
+        <p>
+          From <strong>Champion Plus</strong> and <strong>Regular multispeed</strong> lines to
+          <strong>Champion</strong> and <strong>Mini single-speed</strong> models, we offer sizes and configurations
+          to match your tractor and soil conditions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading" class="section-title text-center" data-aos="fade-up">Frequently asked questions</h2>
+      <p class="text-center lead mb-4" data-aos="fade-up" data-aos-delay="80">Rotavators, tractor implements, and support</p>
+
+      <div class="accordion custom-accordion" role="region" aria-label="FAQ">
+        <div class="accordion-item" *ngFor="let item of faqItems; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+          <h3 class="accordion-header">
+            <button type="button" class="accordion-button" [class.collapsed]="!isFaqActive(i)" (click)="toggleFaq(i)" [attr.aria-expanded]="isFaqActive(i)">
+              {{ item.question }}
+            </button>
+          </h3>
+          <div class="accordion-collapse" [class.show]="isFaqActive(i)">
+            <div class="accordion-body">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-labelledby="cta-heading">
+    <div class="container cta__inner text-center">
+      <h2 id="cta-heading" data-aos="fade-up">Ready to equip your tractor?</h2>
+      <p data-aos="fade-up" data-aos-delay="80">Contact <strong>Bullvator agro pvt. ltd.</strong> in Rajkot, Gujarat for rotavator enquiries and support.</p>
+      <div class="cta__actions" data-aos="fade-up" data-aos-delay="120">
+        <a href="tel:+918320436023" class="btn btn-hero-primary">+91 83204 36023</a>
+        <a href="mailto:bullvator@gmail.com" class="btn btn-hero-outline">bullvator&#64;gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-screen rotavator image lightbox (fixed layer; outside sections for correct stacking) -->
+  <div
+    *ngIf="activeLightboxImage as img"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightbox-title"
+    (click)="closeLightbox()">
+    <div class="lightbox__panel" (click)="$event.stopPropagation()">
+      <button
+        type="button"
+        class="lightbox__close"
+        (click)="closeLightbox()"
+        aria-label="Close full screen image">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--prev"
+        (click)="lightboxPrev($event)"
+        aria-label="Previous rotavator image">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--next"
+        (click)="lightboxNext($event)"
+        aria-label="Next rotavator image">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <figure class="lightbox__figure">
+        <img
+          [src]="img.src"
+          [alt]="img.alt"
+          class="lightbox__img"
+          width="1600"
+          height="1200"
+          decoding="async"
+          draggable="false"
+          />
+        <figcaption id="lightbox-title" class="lightbox__caption">
+          <span class="lightbox__caption-title">{{ img.title }}</span>
+          <span class="lightbox__caption-desc">{{ img.caption }}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</main>
