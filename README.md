@@ -1,5 +1,5 @@
 # bullvator
 
-ng deploy --base-href "https://tuleshghelani.github.io/medonix/"
+ng deploy --base-href "https://tuleshghelani.github.io/bullvator/"
 
-ng deploy --base-href "https://medonixsurgitech.com/"
+ng deploy --base-href "https://bullvator.in/"
