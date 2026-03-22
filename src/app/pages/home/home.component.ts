@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     {
       question: 'How can I enquire about a rotavator model?',
       answer:
-        'Call us on +91 83204 36023 or email bullvator@gmail.com. Our team can guide you on model selection based on your tractor HP and field requirements.'
+        'Call us on email bullvator@gmail.com. Our team can guide you on model selection based on your tractor HP and field requirements.'
     },
     {
       question: 'Do you use genuine parts and in-house manufacturing?',
@@ -107,7 +107,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Bullvator agro pvt. ltd.' });
     this.meta.updateTag({ name: 'contact:email', content: 'bullvator@gmail.com' });
-    this.meta.updateTag({ name: 'contact:phone_number', content: '+918320436023' });
   }
 
   private setupStructuredData(): void {
@@ -124,7 +123,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       logo: 'https://www.bullvator.in/assets/logo/logo.png',
       slogan: 'Young Farmer Make Young India',
       email: 'bullvator@gmail.com',
-      telephone: '+91-83204-36023',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Rajkot',
